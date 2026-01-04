@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 export default function Hero() {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'const solution = problemSolver();';
-  
+  const fullText = 'f(problem) = O(1) solution ∀ complexity';
+
   useEffect(() => {
     let i = 0;
     const timer = setInterval(() => {
@@ -16,7 +16,7 @@ export default function Hero() {
         clearInterval(timer);
       }
     }, 100);
-    
+
     return () => clearInterval(timer);
   }, []);
 
@@ -24,7 +24,7 @@ export default function Hero() {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Animated background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-      
+
       {/* Floating particles */}
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
@@ -43,37 +43,46 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <div className="inline-block mb-6 px-4 py-2 bg-purple-500/20 rounded-full border border-purple-500/30 backdrop-blur-sm">
-          <span className="text-purple-300 text-sm font-mono">Problem Solver • Developer • Innovator</span>
+          <span className="text-purple-300 text-sm font-mono">Competitive Programmer • Problem Solver • Full Stack Developer</span>
         </div>
-        
+
         <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400 animate-gradient">
           Devansh Khandelwal
         </h1>
-        
+
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
+          <div className="px-4 py-2 bg-yellow-500/20 border border-yellow-500/50 rounded-lg backdrop-blur-sm">
+            <span className="text-yellow-300 font-bold text-sm">🏆 ICPC Chennai AIR 19</span>
+          </div>
+          <div className="px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-lg backdrop-blur-sm">
+            <span className="text-green-300 font-bold text-sm">∑ 5000+ Problems Solved</span>
+          </div>
+        </div>
+
         <div className="font-mono text-xl md:text-2xl text-green-400 mb-8 h-8">
           <span className="typing-cursor">{typedText}</span>
           <span className="cursor-blink">|</span>
         </div>
-        
+
         <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Transforming complex problems into elegant solutions through code, creativity, and systematic thinking.
+          <span className="text-purple-300 font-semibold">Why hire me?</span> I don't just code—I architect solutions. From securing <span className="text-yellow-300 font-bold">AIR 19 in ICPC</span> to solving <span className="text-green-300 font-bold">5000+ algorithmic challenges</span>, I bring mathematical rigor and competitive programming excellence to every project. Let's turn your complex problems into elegant, scalable solutions.
         </p>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a 
-            href="#projects"
+          <a
+            href="#achievements"
             className="group px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 flex items-center gap-2"
           >
-            View My Work
+            View Achievements
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a 
+          <a
             href="#contact"
             className="px-8 py-4 border-2 border-purple-400 text-purple-300 hover:bg-purple-500/10 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
           >
-            Get In Touch
+            Let's Connect
           </a>
         </div>
 

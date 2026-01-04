@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Devansh Khandelwal - Problem Solver & Developer",
   description: "Portfolio showcasing innovative solutions and problem-solving expertise",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

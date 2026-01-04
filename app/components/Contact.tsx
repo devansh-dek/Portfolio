@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 
+// Resume link - Using local PDF for now. Upload to Google Drive and update if needed.
+const RESUME_GDRIVE_LINK = '/Devansh_Khandelwal_Resume.pdf'; // Local resume path
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -20,6 +23,18 @@ export default function Contact() {
     }, 1500);
   };
 
+  const handleResumeView = () => {
+    window.open(RESUME_GDRIVE_LINK, '_blank');
+  };
+
+  const handleResumeDownload = () => {
+    // Convert Google Drive link to download link
+    const fileId = RESUME_GDRIVE_LINK.match(/[-\w]{25,}/);
+    if (fileId) {
+      window.open(`https://drive.google.com/uc?export=download&id=${fileId[0]}`, '_blank');
+    }
+  };
+
   return (
     <section id="contact" className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-900 py-20 px-6 flex items-center">
       <div className="max-w-6xl mx-auto w-full">
@@ -35,12 +50,43 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
+            {/* Resume Section - HIGHLIGHTED */}
+            <div className="bg-gradient-to-br from-purple-600/30 to-pink-600/30 backdrop-blur-sm rounded-2xl p-8 border-2 border-purple-500/50 shadow-2xl shadow-purple-500/30">
+              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                <span>📄</span> Resume
+              </h3>
+              <p className="text-purple-200 mb-6">
+                Download my complete resume with all projects, skills, and achievements
+              </p>
+              <div className="flex flex-col gap-3">
+                <button
+                  onClick={handleResumeView}
+                  className="flex items-center justify-center gap-3 px-6 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-semibold transition-all transform hover:scale-105 shadow-lg"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  View Resume
+                </button>
+                <button
+                  onClick={handleResumeDownload}
+                  className="flex items-center justify-center gap-3 px-6 py-4 bg-slate-700 hover:bg-slate-600 text-white rounded-xl font-semibold transition-all transform hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download Resume
+                </button>
+              </div>
+            </div>
+
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
               <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-              
+
               <div className="space-y-6">
-                <a 
-                  href="mailto:devansh@example.com"
+                <a
+                  href="mailto:devanshdek@gmail.com"
                   className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center group-hover:bg-purple-600/30 transition-colors">
@@ -50,12 +96,27 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">Email</div>
-                    <div className="font-semibold">devansh@example.com</div>
+                    <div className="font-semibold">devanshdek@gmail.com</div>
                   </div>
                 </a>
 
-                <a 
-                  href="https://linkedin.com/in/devansh"
+                <a
+                  href="tel:+919625976503"
+                  className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
+                >
+                  <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center group-hover:bg-purple-600/30 transition-colors">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-500">Phone</div>
+                    <div className="font-semibold">+91 96259 76503</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://linkedin.com/in/devanshdek"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
@@ -67,12 +128,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">LinkedIn</div>
-                    <div className="font-semibold">/in/devansh</div>
+                    <div className="font-semibold">/in/devanshdek</div>
                   </div>
                 </a>
 
-                <a 
-                  href="https://github.com/devansh"
+                <a
+                  href="https://github.com/devanshdek"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
@@ -84,7 +145,52 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">GitHub</div>
-                    <div className="font-semibold">/devansh</div>
+                    <div className="font-semibold">/devanshdek</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://codechef.com/users/devanshdek"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
+                >
+                  <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center group-hover:bg-purple-600/30 transition-colors">
+                    <span className="text-2xl">👨‍🍳</span>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-500">CodeChef</div>
+                    <div className="font-semibold">/devanshdek</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://codeforces.com/profile/devanshdek"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
+                >
+                  <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center group-hover:bg-purple-600/30 transition-colors">
+                    <span className="text-2xl">⚔️</span>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-500">Codeforces</div>
+                    <div className="font-semibold">/devanshdek</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://leetcode.com/u/devanshdek"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
+                >
+                  <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center group-hover:bg-purple-600/30 transition-colors">
+                    <span className="text-2xl">🎯</span>
+                  </div>
+                  <div>
+                    <div className="text-sm text-gray-500">LeetCode</div>
+                    <div className="font-semibold">/devanshdek</div>
                   </div>
                 </a>
               </div>
@@ -95,10 +201,10 @@ export default function Contact() {
               <h3 className="text-white font-bold text-xl mb-6">Quick Stats</h3>
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { label: 'Projects Completed', value: '50+' },
-                  { label: 'Code Commits', value: '5000+' },
-                  { label: 'Coffee Consumed', value: '∞' },
-                  { label: 'Problems Solved', value: '1000+' }
+                  { label: 'Peak Rating', value: '1964' },
+                  { label: 'Contest Rank', value: 'Top 150' },
+                  { label: 'ICPC Rank', value: '#65 & #66' },
+                  { label: 'ATF Fellow', value: 'Top 70' }
                 ].map((stat, idx) => (
                   <div key={idx} className="text-center">
                     <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>

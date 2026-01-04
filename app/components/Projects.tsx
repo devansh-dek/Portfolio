@@ -16,43 +16,33 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "AI-Powered Solution",
-    problem: "Complex data processing bottleneck affecting system performance",
-    solution: "Implemented machine learning pipeline with optimized algorithms",
-    impact: "300% performance improvement, reduced processing time by 75%",
-    tech: ["Python", "TensorFlow", "Docker", "AWS"],
-    category: "Machine Learning",
-    link: "#"
+    title: "TAP Cell Portal - IIIT Ranchi",
+    problem: "Manual placement processes causing inefficiency: recruiters and students spending hours on paperwork, announcements getting lost, no centralized platform for 500+ students and multiple recruiters.",
+    solution: "Engineered full-stack Training & Placement portal with monolithic backend using Node.js, Express, AWS S3, and JWT authentication. Built interactive dashboards, announcement modules, and mobile-responsive UI with React.js + Tailwind CSS.",
+    impact: "50% reduction in manual overhead for placement workflows, automated recruiter-student communications, improved usability for 500+ students with secure scalable handling of placement records.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "AWS S3", "JWT", "Tailwind CSS", "Vercel"],
+    category: "Full Stack",
+    link: "https://github.com/devanshdek/tap-portal-frontend"
   },
   {
     id: 2,
-    title: "Real-Time Analytics Dashboard",
-    problem: "Business teams lacked visibility into key metrics",
-    solution: "Built interactive dashboard with real-time data streaming",
-    impact: "Enabled data-driven decisions, 40% faster response time",
-    tech: ["React", "Node.js", "WebSocket", "PostgreSQL"],
+    title: "Codify - CP Platform",
+    problem: "No secure way to evaluate competitive programming code submissions in real-time: untrusted user code could compromise servers, concurrent submissions creating bottlenecks, evaluation delays affecting user experience.",
+    solution: "Orchestrated full-stack competitive programming platform with Docker-based containerization to securely run code in isolated environments. Designed asynchronous job queue system using RabbitMQ for scalable concurrent submission handling.",
+    impact: "95% improvement in execution security through containerized sandboxing, eliminated evaluation bottlenecks with async queue system, enabled real-time code execution and evaluation features for competitive programming contests.",
+    tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL", "Docker", "RabbitMQ", "JWT"],
     category: "Full Stack",
-    link: "#"
+    link: "https://github.com/devanshdek/codify"
   },
   {
     id: 3,
-    title: "Automated Testing Framework",
-    problem: "Manual testing consuming 40% of development time",
-    solution: "Created comprehensive testing suite with CI/CD integration",
-    impact: "90% reduction in bugs, 50% faster deployment cycle",
-    tech: ["Jest", "Cypress", "GitHub Actions", "TypeScript"],
-    category: "DevOps",
-    link: "#"
-  },
-  {
-    id: 4,
-    title: "Microservices Architecture",
-    problem: "Monolithic app causing scalability and maintenance issues",
-    solution: "Redesigned system into containerized microservices",
-    impact: "5x scalability, 60% reduction in downtime",
-    tech: ["Docker", "Kubernetes", "Go", "Redis"],
-    category: "Architecture",
-    link: "#"
+    title: "Live Trading & Backtesting Strategy",
+    problem: "Traders needed a comprehensive platform to develop, test, and execute trading strategies in real-time with accurate historical data analysis for backtesting and performance validation.",
+    solution: "Built quantitative trading platform with live market data integration, advanced backtesting engine for historical strategy validation, and real-time trade execution capabilities with risk management controls.",
+    impact: "Enables traders to validate strategies with historical data before live trading, provides real-time performance monitoring with comprehensive analytics and reporting for informed trading decisions.",
+    tech: ["Python", "pandas", "NumPy", "MongoDB", "API Integration", "Data Analysis", "Backtesting Engine"],
+    category: "Data Science",
+    link: "https://github.com/devansh-dek/Live-Trading-and-Backtesting-Strategy"
   }
 ];
 
@@ -61,8 +51,8 @@ export default function Projects() {
   const [filter, setFilter] = useState<string>('All');
 
   const categories = ['All', ...new Set(projects.map(p => p.category))];
-  const filteredProjects = filter === 'All' 
-    ? projects 
+  const filteredProjects = filter === 'All'
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (

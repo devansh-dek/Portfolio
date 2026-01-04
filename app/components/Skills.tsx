@@ -11,23 +11,46 @@ interface Skill {
 
 const skills: Skill[] = [
   // Languages
-  { name: 'Python', level: 95, category: 'Languages', icon: '🐍' },
-  { name: 'JavaScript/TypeScript', level: 90, category: 'Languages', icon: '⚡' },
-  { name: 'Java', level: 85, category: 'Languages', icon: '☕' },
-  { name: 'Go', level: 80, category: 'Languages', icon: '🔷' },
-  { name: 'C++', level: 75, category: 'Languages', icon: '⚙️' },
-  
-  // Frameworks & Libraries
-  { name: 'React/Next.js', level: 90, category: 'Frontend', icon: '⚛️' },
-  { name: 'Node.js', level: 88, category: 'Backend', icon: '🟢' },
-  { name: 'Django/Flask', level: 85, category: 'Backend', icon: '🎯' },
-  { name: 'TensorFlow/PyTorch', level: 82, category: 'AI/ML', icon: '🤖' },
-  
-  // Tools & Platforms
-  { name: 'Docker/Kubernetes', level: 85, category: 'DevOps', icon: '🐳' },
-  { name: 'AWS/Cloud', level: 80, category: 'Cloud', icon: '☁️' },
-  { name: 'Git/GitHub', level: 92, category: 'Tools', icon: '🔧' },
-  { name: 'PostgreSQL/MongoDB', level: 85, category: 'Database', icon: '🗄️' },
+  { name: 'C++', level: 92, category: 'Languages', icon: '⚙️' },
+  { name: 'C', level: 88, category: 'Languages', icon: '🔧' },
+  { name: 'Python', level: 90, category: 'Languages', icon: '🐍' },
+  { name: 'JavaScript', level: 90, category: 'Languages', icon: '⚡' },
+  { name: 'TypeScript', level: 88, category: 'Languages', icon: '💙' },
+  { name: 'HTML/CSS', level: 90, category: 'Languages', icon: '🎨' },
+
+  // Frontend Frameworks
+  { name: 'React.js', level: 92, category: 'Frontend', icon: '⚛️' },
+  { name: 'Vue.js', level: 85, category: 'Frontend', icon: '💚' },
+  { name: 'Tailwind CSS', level: 90, category: 'Frontend', icon: '🌊' },
+  { name: 'Chakra UI', level: 80, category: 'Frontend', icon: '🎯' },
+
+  // Backend & APIs
+  { name: 'Node.js', level: 90, category: 'Backend', icon: '🟢' },
+  { name: 'Express.js', level: 88, category: 'Backend', icon: '⚙️' },
+  { name: 'REST APIs', level: 92, category: 'Backend', icon: '🔌' },
+  { name: 'gRPC', level: 85, category: 'Backend', icon: '📡' },
+
+  // Databases
+  { name: 'MongoDB', level: 88, category: 'Database', icon: '🍃' },
+  { name: 'MySQL', level: 85, category: 'Database', icon: '🐬' },
+  { name: 'PostgreSQL', level: 85, category: 'Database', icon: '🐘' },
+  { name: 'Redis', level: 80, category: 'Database', icon: '🔴' },
+
+  // DevOps & Tools
+  { name: 'Docker', level: 90, category: 'DevOps', icon: '🐳' },
+  { name: 'Git/GitHub', level: 95, category: 'Tools', icon: '🔧' },
+  { name: 'VS Code', level: 92, category: 'Tools', icon: '💻' },
+  { name: 'Postman', level: 88, category: 'Tools', icon: '📮' },
+
+  // Systems & Concepts
+  { name: 'Algorithm Design', level: 92, category: 'Concepts', icon: '🧩' },
+  { name: 'OS Concepts', level: 85, category: 'Concepts', icon: '⚙️' },
+  { name: 'Object Oriented Programming', level: 90, category: 'Concepts', icon: '🏗️' },
+  { name: 'Network Programming', level: 80, category: 'Concepts', icon: '🌐' },
+
+  // Platforms
+  { name: 'Linux/Ubuntu', level: 88, category: 'Platforms', icon: '🐧' },
+  { name: 'AWS', level: 80, category: 'Platforms', icon: '☁️' },
 ];
 
 export default function Skills() {
@@ -35,8 +58,8 @@ export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const categories = ['All', ...new Set(skills.map(s => s.category))];
-  const filteredSkills = selectedCategory === 'All' 
-    ? skills 
+  const filteredSkills = selectedCategory === 'All'
+    ? skills
     : skills.filter(s => s.category === selectedCategory);
 
   return (
@@ -91,7 +114,7 @@ export default function Skills() {
                   {skill.level}%
                 </span>
               </div>
-              
+
               {/* Progress bar */}
               <div className="relative h-2 bg-slate-700 rounded-full overflow-hidden">
                 <div

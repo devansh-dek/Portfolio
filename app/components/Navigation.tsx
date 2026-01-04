@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Logo from './Logo';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,7 +12,7 @@ export default function Navigation() {
       setIsScrolled(window.scrollY > 50);
 
       // Determine active section
-      const sections = ['projects', 'skills', 'experience', 'contact'];
+      const sections = ['achievements', 'projects', 'skills', 'experience', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -29,6 +30,7 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
+    { name: 'Achievements', href: '#achievements' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
@@ -47,9 +49,12 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <a
             href="#"
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            DK
+            <Logo />
+            <span className="hidden sm:inline text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+              Devansh
+            </span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">

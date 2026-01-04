@@ -15,42 +15,30 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: 1,
-    title: "Senior Software Engineer",
-    company: "Tech Innovation Inc",
-    period: "2023 - Present",
-    description: "Leading development of scalable cloud solutions and mentoring junior developers",
+    title: "Software Engineer Intern",
+    company: "Globetrotter Finance",
+    period: "March 2025 – August 2025",
+    description: "Designed and developed LLM-powered AI automation systems and production platforms for fintech services",
     achievements: [
-      "Architected microservices platform serving 1M+ users",
-      "Reduced infrastructure costs by 40% through optimization",
-      "Led team of 5 developers on critical projects"
+      "Designed LLM-powered AI workflow automation system for fintech services, delivering 8000+ lines of production-grade code in Python and JavaScript",
+      "Redesigned production Vue.js platform using Clean Architecture, improving responsiveness, load time, and UX for 100+ active users, increasing retention by 20%",
+      "Implemented scalable REST and gRPC APIs in Python with Protocol Buffers, containerized with Docker on Linux for microservice communication",
+      "Operationalized observability stack with Logstash, AWS CloudWatch, and Grafana, enabling proactive monitoring and reducing MTTR by 20%"
     ],
-    tech: ["AWS", "Kubernetes", "React", "Python"]
+    tech: ["Python", "JavaScript", "Vue.js", "gRPC", "Protocol Buffers", "Docker", "Linux", "AWS CloudWatch", "Logstash", "Grafana", "Clean Architecture"]
   },
   {
     id: 2,
-    title: "Full Stack Developer",
-    company: "Digital Solutions Co",
-    period: "2021 - 2023",
-    description: "Built and maintained web applications with focus on performance and user experience",
+    title: "President",
+    company: "House of Geeks - IIIT Ranchi Coding Club",
+    period: "2024 - Present",
+    description: "Leading technical initiatives, mentorship programs, and event organization for the college coding community",
     achievements: [
-      "Developed real-time analytics dashboard used by 500+ clients",
-      "Improved application performance by 60%",
-      "Implemented CI/CD pipelines reducing deployment time by 70%"
+      "Led technical initiatives and mentorship for 750+ students",
+      "Organized competitive programming contests and workshops",
+      "Built collaborative learning environment fostering algorithmic thinking"
     ],
-    tech: ["Node.js", "React", "MongoDB", "Docker"]
-  },
-  {
-    id: 3,
-    title: "Software Engineer Intern",
-    company: "StartUp Ventures",
-    period: "2020 - 2021",
-    description: "Contributed to product development and learned modern development practices",
-    achievements: [
-      "Built RESTful APIs serving 10K+ daily requests",
-      "Implemented automated testing increasing code coverage to 85%",
-      "Collaborated with cross-functional teams on feature development"
-    ],
-    tech: ["Python", "Django", "PostgreSQL", "Redis"]
+    tech: ["Leadership", "Mentorship", "Community Building", "Event Management"]
   }
 ];
 
