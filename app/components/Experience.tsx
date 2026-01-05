@@ -46,25 +46,25 @@ export default function Experience() {
   const [activeExp, setActiveExp] = useState<number>(1);
 
   return (
-    <section id="experience" className="min-h-screen bg-slate-800 py-20 px-6">
+    <section id="experience" className="min-h-screen bg-slate-800 py-20 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Journey of <span className="text-purple-400">Growth</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Every experience is a stepping stone to becoming a better problem solver
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           {/* Timeline sidebar */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 space-y-3 sm:space-y-4">
             {experiences.map((exp) => (
               <button
                 key={exp.id}
                 onClick={() => setActiveExp(exp.id)}
-                className={`w-full text-left p-6 rounded-xl transition-all duration-300 ${
+                className={`w-full text-left p-4 sm:p-6 rounded-xl transition-all duration-300 text-sm sm:text-base ${
                   activeExp === exp.id
                     ? 'bg-purple-600 shadow-lg shadow-purple-500/50'
                     : 'bg-slate-700/50 hover:bg-slate-700'

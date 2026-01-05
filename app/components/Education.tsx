@@ -57,13 +57,13 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="min-h-screen bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 py-20 px-6 relative overflow-hidden">
+    <section id="education" className="min-h-screen bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 py-20 px-4 sm:px-6 relative overflow-hidden">
       {/* Mathematical background elements */}
       <div className="absolute inset-0 opacity-5">
         {mathSymbols.map((item, idx) => (
           <div
             key={idx}
-            className="absolute text-6xl font-bold text-purple-500 animate-float"
+            className="absolute text-4xl sm:text-6xl font-bold text-purple-500 animate-float"
             style={{
               left: `${15 + (idx * 12)}%`,
               top: `${10 + (idx * 15)}%`,
@@ -77,16 +77,16 @@ export default function Education() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4 px-6 py-3 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full border border-blue-500/50 backdrop-blur-sm">
-            <span className="text-blue-200 font-mono font-bold">education(knowledge) → expertise(∞)</span>
+        <div className="text-center mb-16 px-4">
+          <div className="inline-block mb-4 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full border border-blue-500/50 backdrop-blur-sm">
+            <span className="text-blue-200 font-mono font-bold text-xs sm:text-sm">education(knowledge) → expertise(∞)</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
               Foundation of Excellence
             </span>
           </h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg">
             Building a strong academic foundation through rigorous problem-solving
           </p>
         </div>

@@ -63,24 +63,24 @@ export default function Skills() {
     : skills.filter(s => s.category === selectedCategory);
 
   return (
-    <section id="skills" className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 py-20 px-6">
+    <section id="skills" className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 py-20 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Tech <span className="text-purple-400">Arsenal</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             A diverse toolkit built through continuous learning and hands-on problem-solving
           </p>
         </div>
 
         {/* Category filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-full font-medium text-sm transition-all duration-300 ${
                 selectedCategory === category
                   ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/50'
                   : 'bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white'
@@ -92,11 +92,11 @@ export default function Skills() {
         </div>
 
         {/* Skills grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredSkills.map((skill) => (
             <div
               key={skill.name}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 cursor-pointer transform hover:scale-105"
+              className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 cursor-pointer transform hover:scale-105"
               onMouseEnter={() => setHoveredSkill(skill.name)}
               onMouseLeave={() => setHoveredSkill(null)}
             >
@@ -129,11 +129,11 @@ export default function Skills() {
         </div>
 
         {/* Problem-solving approach */}
-        <div className="mt-20 bg-slate-800/30 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
-          <h3 className="text-3xl font-bold text-white mb-6 text-center">
+        <div className="mt-16 sm:mt-20 bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-purple-500/30">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">
             My Problem-Solving <span className="text-purple-400">Approach</span>
           </h3>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { step: '01', title: 'Understand', desc: 'Deep dive into the problem space', icon: '🔍' },
               { step: '02', title: 'Analyze', desc: 'Break down into manageable parts', icon: '📊' },
@@ -141,12 +141,12 @@ export default function Skills() {
               { step: '04', title: 'Optimize', desc: 'Refine for performance', icon: '🚀' },
             ].map((phase) => (
               <div key={phase.step} className="text-center group">
-                <div className="text-5xl mb-3 group-hover:scale-110 transition-transform">
+                <div className="text-4xl sm:text-5xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
                   {phase.icon}
                 </div>
-                <div className="text-purple-400 font-mono text-sm mb-2">{phase.step}</div>
-                <h4 className="text-white font-bold text-lg mb-2">{phase.title}</h4>
-                <p className="text-gray-400 text-sm">{phase.desc}</p>
+                <div className="text-purple-400 font-mono text-xs sm:text-sm mb-1 sm:mb-2">{phase.step}</div>
+                <h4 className="text-white font-bold text-sm sm:text-lg mb-1 sm:mb-2">{phase.title}</h4>
+                <p className="text-gray-400 text-xs sm:text-sm">{phase.desc}</p>
               </div>
             ))}
           </div>

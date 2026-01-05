@@ -45,24 +45,24 @@ export default function Navigation() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           <a
             href="#"
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity min-w-0"
           >
             <Logo />
-            <span className="hidden sm:inline text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+            <span className="hidden sm:inline text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 whitespace-nowrap">
               Devansh
             </span>
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className={`font-medium transition-colors ${
+                className={`font-medium text-sm lg:text-base transition-colors whitespace-nowrap ${
                   activeSection === item.href.slice(1)
                     ? 'text-purple-400'
                     : 'text-gray-300 hover:text-white'
@@ -73,7 +73,7 @@ export default function Navigation() {
             ))}
             <a
               href="/Devansh_Khandelwal_Resume.pdf"
-              className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium transition-all transform hover:scale-105"
+              className="px-4 sm:px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-medium text-sm lg:text-base transition-all transform hover:scale-105 whitespace-nowrap"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -82,7 +82,7 @@ export default function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <button className="md:hidden text-white">
+          <button className="md:hidden text-white p-2 ml-auto">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>

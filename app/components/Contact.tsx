@@ -36,18 +36,18 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-900 py-20 px-6 flex items-center">
+    <section id="contact" className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-900 py-20 px-4 sm:px-6 flex items-center">
       <div className="max-w-6xl mx-auto w-full">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Let's <span className="text-purple-400">Connect</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Have a problem to solve or a project idea? Let's discuss how we can work together
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
             {/* Resume Section - HIGHLIGHTED */}

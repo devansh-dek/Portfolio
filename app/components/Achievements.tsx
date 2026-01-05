@@ -176,7 +176,7 @@ export default function Achievements() {
         {mathConcepts.map((concept, idx) => (
           <div
             key={idx}
-            className="absolute text-6xl font-bold text-purple-500 animate-float"
+            className="absolute text-4xl sm:text-6xl font-bold text-purple-500 animate-float"
             style={{
               left: `${10 + (idx * 15)}%`,
               top: `${20 + (idx * 10)}%`,
@@ -189,14 +189,14 @@ export default function Achievements() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4 px-6 py-3 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full border border-purple-500/50 backdrop-blur-sm">
-            <span className="text-purple-200 font-mono font-bold">∫ proof_of_excellence dx = ∞</span>
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <div className="inline-block mb-4 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full border border-purple-500/50 backdrop-blur-sm">
+            <span className="text-purple-200 font-mono font-bold text-xs sm:text-sm">∫ proof_of_excellence dx = ∞</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4">
             Trophy <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">Case</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             A showcase of competitive programming excellence and problem-solving mastery
           </p>
         </div>
@@ -218,7 +218,7 @@ export default function Achievements() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
                     <div>
                       <div className="text-8xl md:text-9xl mb-6 animate-bounce-slow">
                         {achievement.icon}
@@ -255,7 +255,7 @@ export default function Achievements() {
         })}
 
         {/* Other Achievements */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
           {achievements.filter(a => !a.featured).map((achievement) => {
             const colors = getColorClasses(achievement.color);
             const isHovered = selectedAchievement === achievement.id;
@@ -325,7 +325,7 @@ export default function Achievements() {
               <p className="text-purple-200 text-lg">Live Competitive Programming Ratings</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
                 { platform: 'Codeforces', rating: '1964', rank: 'Candidate Master', color: 'from-purple-500 to-violet-500', handle: 'devanshhhhhh', icon: '🔷', link: 'https://codeforces.com/profile/devanshhhhhh' },
                 { platform: 'LeetCode', rating: '2109', rank: 'Guardian', color: 'from-yellow-500 to-orange-500', handle: 'devanshksg', icon: '⚔️', link: 'https://leetcode.com/u/devanshksg' },
@@ -360,7 +360,7 @@ export default function Achievements() {
               ))}
             </div>
 
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
               {[
                 { label: 'Peak Rating', value: '2109', icon: '🎯' },
                 { label: 'ICPC Regional', value: '#65 & #66', icon: '🏆' },

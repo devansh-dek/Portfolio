@@ -56,24 +56,24 @@ export default function Projects() {
     : projects.filter(p => p.category === filter);
 
   return (
-    <section id="projects" className="min-h-screen bg-slate-900 py-20 px-6">
+    <section id="projects" className="min-h-screen bg-slate-900 py-20 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Problems <span className="text-purple-400">Solved</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Every project is a problem waiting to be solved. Here's how I approach challenges with creativity and technical expertise.
           </p>
         </div>
 
         {/* Filter buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-1.5 sm:py-2 rounded-full font-medium text-sm transition-all duration-300 ${
                 filter === category
                   ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/50'
                   : 'bg-slate-800 text-gray-400 hover:bg-slate-700 hover:text-white'
@@ -85,20 +85,20 @@ export default function Projects() {
         </div>
 
         {/* Projects grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className={`group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 cursor-pointer ${
+              className={`group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-slate-700 hover:border-purple-500 transition-all duration-300 cursor-pointer ${
                 selectedProject === project.id ? 'ring-2 ring-purple-500' : ''
               }`}
               onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
             >
-              <div className="absolute top-4 right-4 px-3 py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs text-purple-300">
+              <div className="absolute top-4 right-4 px-2 py-1 sm:px-3 sm:py-1 bg-purple-600/20 border border-purple-500/30 rounded-full text-xs text-purple-300">
                 {project.category}
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-4 pr-24 group-hover:text-purple-400 transition-colors">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 pr-24 group-hover:text-purple-400 transition-colors">
                 {project.title}
               </h3>
 
