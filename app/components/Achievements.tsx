@@ -227,7 +227,7 @@ export default function Achievements() {
                         {achievement.title}
                       </h3>
                       <p className="text-2xl text-yellow-300 font-bold mb-2">
-                        Chennai: <span className="text-4xl">#65</span> | Amritapuri: <span className="text-4xl">#66</span>
+                        Chennai: <span className="text-4xl">#19</span> | Amritapuri: <span className="text-4xl">#63</span>
                       </p>
                       <p className="text-xl text-purple-300 font-semibold mb-4">{achievement.organization}</p>
                       <p className="text-gray-300 leading-relaxed text-lg mb-6">
