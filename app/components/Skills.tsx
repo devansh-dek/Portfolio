@@ -38,6 +38,7 @@ const skills: Skill[] = [
 
   // DevOps & Tools
   { name: 'Docker', level: 90, category: 'DevOps', icon: '🐳' },
+  { name: 'Kafka', level: 85, category: 'DevOps', icon: '🧵' },
   { name: 'Git/GitHub', level: 95, category: 'Tools', icon: '🔧' },
   { name: 'VS Code', level: 92, category: 'Tools', icon: '💻' },
   { name: 'Postman', level: 88, category: 'Tools', icon: '📮' },
@@ -47,6 +48,7 @@ const skills: Skill[] = [
   { name: 'OS Concepts', level: 85, category: 'Concepts', icon: '⚙️' },
   { name: 'Object Oriented Programming', level: 90, category: 'Concepts', icon: '🏗️' },
   { name: 'Network Programming', level: 80, category: 'Concepts', icon: '🌐' },
+  { name: 'Microservices Architecture', level: 85, category: 'Concepts', icon: '🧩' },
 
   // Platforms
   { name: 'Linux/Ubuntu', level: 88, category: 'Platforms', icon: '🐧' },

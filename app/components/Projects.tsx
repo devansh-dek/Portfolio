@@ -44,6 +44,17 @@ const projects: Project[] = [
     category: "Data Science",
     link: "https://github.com/devansh-dek/Live-Trading-and-Backtesting-Strategy"
   }
+  ,
+  {
+    id: 4,
+    title: "Distributed Task Manager",
+    problem: "Scaling task execution reliably across services is hard: coordinating workers, preventing bottlenecks, and safely retrying failures without losing tasks or overloading the system.",
+    solution: "Designed an event-driven distributed system: API service accepts tasks and publishes to Kafka; worker services consume and process tasks; results and states persist in MongoDB; services containerized via Docker for reproducible local orchestration.",
+    impact: "Enables reliable, scalable task processing with decoupled services, fault-tolerant retries using exponential backoff, and DLQ isolation for persistent failures.",
+    tech: ["Node.js", "Express.js", "TypeScript", "MongoDB", "Kafka", "Docker", "Microservices", "REST"],
+    category: "Distributed Systems",
+    link: "https://github.com/devansh-dek/Distributed-Task-Manager"
+  }
 ];
 
 export default function Projects() {
