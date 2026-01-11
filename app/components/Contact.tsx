@@ -1,27 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-
 // Resume link - Using local PDF for now. Upload to Google Drive and update if needed.
 const RESUME_GDRIVE_LINK = '/Devansh_Khandelwal_Resume.pdf'; // Local resume path
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
-    // Simulate form submission
-    setTimeout(() => {
-      setStatus('sent');
-      setTimeout(() => setStatus('idle'), 3000);
-    }, 1500);
-  };
 
   const handleResumeView = () => {
     window.open(RESUME_GDRIVE_LINK, '_blank');
@@ -196,12 +179,44 @@ export default function Contact() {
               </div>
             </div>
 
+          </div>
+
+          {/* Right column: concise contact cards to fill space */}
+          <div className="space-y-6">
+            <div className="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+              <h4 className="text-lg font-semibold text-white mb-2">Preferred contact</h4>
+              <p className="text-gray-300 text-sm mb-3">Email is preferred for technical conversations. I typically reply within 48 hours.</p>
+              <a href="mailto:devanshdek@gmail.com" className="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md text-sm">Email →</a>
+            </div>
+
+            {/* <div className="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+              <h4 className="text-lg font-semibold text-white mb-2">Open to</h4>
+              <ul className="list-disc list-inside text-gray-300 text-sm">
+                <li>Systems / Backend Engineering (low-latency)</li>
+                <li>Quantitative / Trading Infrastructure</li>
+                <li>SDE roles at FAANG / High-scale infra teams</li>
+              </ul>
+            </div> */}
+
+            <div className="bg-gradient-to-br from-purple-600/10 to-pink-600/6 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
+              <h4 className="text-lg font-semibold text-white mb-2">One-line highlights</h4>
+              <div className="text-gray-300 text-sm space-y-2">
+                <div>ICPC Chennai Regional — <strong className="text-white">#19</strong></div>
+                <div>Codeforces — <strong className="text-white">Candidate Master (1964)</strong></div>
+                <div>CodeChef — <strong className="text-white">6★ (peak 2219)</strong></div>
+              </div>
+              <div className="mt-4 flex gap-2">
+                <a href="#achievements" className="text-sm px-3 py-2 bg-slate-800 text-purple-200 rounded-md border border-purple-700/10">Achievements</a>
+                <a href="#projects" className="text-sm px-3 py-2 bg-slate-800 text-purple-200 rounded-md border border-purple-700/10">Projects</a>
+              </div>
+            </div>
+
             {/* Quick Stats */}
             <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
               <h3 className="text-white font-bold text-xl mb-6">Quick Stats</h3>
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { label: 'Peak Rating', value: '1964' },
+                  { label: 'Codeforces Peak Rating', value: '1964' },
                   { label: 'Contest Rank', value: 'Top 125' },
                   { label: 'ICPC Rank', value: '#19 & #63' },
                   { label: 'ATF Fellow', value: 'Top 70' }
@@ -213,71 +228,6 @@ export default function Contact() {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-gray-300 mb-2 font-medium">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
-                  placeholder="John Doe"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2 font-medium">
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
-                  placeholder="john@example.com"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-gray-300 mb-2 font-medium">
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  rows={5}
-                  className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors resize-none"
-                  placeholder="Tell me about your project or idea..."
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === 'sending'}
-                className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 ${
-                  status === 'sent'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-purple-600 hover:bg-purple-700 text-white transform hover:scale-105'
-                } disabled:opacity-50 disabled:cursor-not-allowed`}
-              >
-                {status === 'idle' && 'Send Message'}
-                {status === 'sending' && 'Sending...'}
-                {status === 'sent' && '✓ Message Sent!'}
-              </button>
-            </form>
           </div>
         </div>
       </div>
