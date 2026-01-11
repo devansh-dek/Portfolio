@@ -116,7 +116,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/devanshdek"
+                  href="https://www.linkedin.com/in/devansh-khandelwal-dek/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
@@ -128,12 +128,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">LinkedIn</div>
-                    <div className="font-semibold">/in/devanshdek</div>
+                    <div className="font-semibold">/in/devansh-khandelwal-dek</div>
                   </div>
                 </a>
 
                 <a
-                  href="https://github.com/devanshdek"
+                  href="https://github.com/devansh-dek"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
@@ -145,12 +145,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">GitHub</div>
-                    <div className="font-semibold">/devanshdek</div>
+                    <div className="font-semibold">/devansh-dek</div>
                   </div>
                 </a>
 
                 <a
-                  href="https://codechef.com/users/devanshdek"
+                  href="https://www.codechef.com/users/devanshksg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
@@ -160,12 +160,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">CodeChef</div>
-                    <div className="font-semibold">/devanshdek</div>
+                    <div className="font-semibold">/devanshksg</div>
                   </div>
                 </a>
 
                 <a
-                  href="https://codeforces.com/profile/devanshdek"
+                  href="https://codeforces.com/profile/devanshhhhhh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
@@ -175,12 +175,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">Codeforces</div>
-                    <div className="font-semibold">/devanshdek</div>
+                    <div className="font-semibold">/devanshhhhhh</div>
                   </div>
                 </a>
 
                 <a
-                  href="https://leetcode.com/u/devanshdek"
+                  href="https://leetcode.com/u/devanshksg/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group"
@@ -190,7 +190,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">LeetCode</div>
-                    <div className="font-semibold">/devanshdek</div>
+                    <div className="font-semibold">/devanshksg</div>
                   </div>
                 </a>
               </div>
@@ -202,8 +202,8 @@ export default function Contact() {
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { label: 'Peak Rating', value: '1964' },
-                  { label: 'Contest Rank', value: 'Top 150' },
-                  { label: 'ICPC Rank', value: '#65 & #66' },
+                  { label: 'Contest Rank', value: 'Top 125' },
+                  { label: 'ICPC Rank', value: '#19 & #63' },
                   { label: 'ATF Fellow', value: 'Top 70' }
                 ].map((stat, idx) => (
                   <div key={idx} className="text-center">
