@@ -18,14 +18,16 @@ const experiences: Experience[] = [
     title: "Software Engineer Intern",
     company: "Globetrotter Finance",
     period: "March 2025 – August 2025",
-    description: "Designed and developed LLM-powered AI automation systems and production platforms for fintech services",
+    description: "Internship focused on systems, architecture decisions and reliability for fintech production services.",
     achievements: [
-      "Designed LLM-powered AI workflow automation system for fintech services, delivering 8000+ lines of production-grade code in Python and JavaScript",
-      "Redesigned production Vue.js platform using Clean Architecture, improving responsiveness, load time, and UX for 100+ active users, increasing retention by 20%",
-      "Implemented scalable REST and gRPC APIs in Python with Protocol Buffers, containerized with Docker on Linux for microservice communication",
-      "Operationalized observability stack with Logstash, AWS CloudWatch, and Grafana, enabling proactive monitoring and reducing MTTR by 20%"
+      "Architected service boundaries: split monolith into 3 microservices (ingest, core-processing, api-gateway) to isolate latency-sensitive paths and enable independent scaling.",
+      "Chose gRPC + Protocol Buffers for internal binary RPC to reduce serialization overhead and improve p99 latency compared to existing JSON-over-HTTP approach.",
+      "Introduced asynchronous processing with RabbitMQ to decouple user-facing API latency from background workflows; reduced tail latency and improved throughput under load.",
+      "Improved reliability and observability: added structured logs, distributed tracing (OpenTelemetry), and Grafana dashboards — mean time to detect/resolve reduced by ~20%.",
+      "Reasoned trade-offs: prioritized binary RPC for internal comms (faster, stricter schemas) while keeping REST+JWT on edge for third-party compatibility and easier debugging.",
+      "Containerized services with Docker and defined health checks and resource limits to avoid noisy-neighbor interference in shared environments."
     ],
-    tech: ["Python", "JavaScript", "Vue.js", "gRPC", "Protocol Buffers", "Docker", "Linux", "AWS CloudWatch", "Logstash", "Grafana", "Clean Architecture"]
+    tech: ["Python", "gRPC", "Protocol Buffers", "RabbitMQ", "Docker", "OpenTelemetry", "Grafana", "AWS"]
   },
   {
     id: 2,

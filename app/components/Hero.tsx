@@ -6,6 +6,12 @@ export default function Hero() {
   const [typedText, setTypedText] = useState('');
   const fullText = 'f(problem) = O(1) solution ∀ complexity';
 
+  // deterministic pseudo-random generator (pure function) to avoid SSR/CSR mismatch
+  const det = (i: number, salt = 1) => {
+    const x = Math.sin((i + 1) * (salt * 12.9898)) * 43758.5453;
+    return Math.abs(x - Math.floor(x));
+  };
+
   useEffect(() => {
     let i = 0;
     const timer = setInterval(() => {
@@ -21,41 +27,52 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-20 sm:pt-28">
       {/* Animated background grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${5 + Math.random() * 10}s`,
-            }}
-          />
-        ))}
+      {/* Floating particles (deterministic to avoid hydration mismatch) */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        {Array.from({ length: 12 }).map((_, i) => {
+          const left = (det(i, 1) * 100).toFixed(6);
+          const top = (det(i, 2) * 100).toFixed(6);
+          const delay = (det(i, 3) * 5).toFixed(6);
+          const duration = (5 + det(i, 4) * 10).toFixed(6);
+          return (
+            <div
+              key={i}
+              className="particle"
+              style={{
+                left: `${left}%`,
+                top: `${top}%`,
+                animationDelay: `${delay}s`,
+                animationDuration: `${duration}s`,
+              }}
+            />
+          );
+        })}
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <div className="inline-block mb-6 px-4 py-2 bg-purple-500/20 rounded-full border border-purple-500/30 backdrop-blur-sm">
-          <span className="text-purple-300 text-sm font-mono">Competitive Programmer • Problem Solver • Full Stack Developer</span>
+        <div className="inline-block mb-4 px-4 py-2 bg-gray-800/40 rounded-full border border-slate-700 backdrop-blur-sm">
+          <span className="text-gray-200 text-sm font-mono">Systems Engineer • Competitive Programming depth • Problem Solver</span>
         </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400 animate-gradient">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400 animate-gradient">
           Devansh Khandelwal
         </h1>
 
+        <h2 className="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium mb-6">Systems-oriented Software Engineer with Competitive Programming depth and production infra experience.</h2>
+
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-6">
-          <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-yellow-500/20 border border-yellow-500/50 rounded-lg backdrop-blur-sm">
-            <span className="text-yellow-300 font-bold text-xs sm:text-sm">🏆 ICPC Chennai AIR 19</span>
+          <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-lg backdrop-blur-sm">
+            <span className="text-yellow-300 font-semibold text-xs sm:text-sm">ICPC Chennai • Rank #19</span>
           </div>
-          <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-green-500/20 border border-green-500/50 rounded-lg backdrop-blur-sm">
-            <span className="text-green-300 font-bold text-xs sm:text-sm">∑ 3000+ Problems Solved</span>
+          <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-green-500/10 border border-green-500/20 rounded-lg backdrop-blur-sm">
+            <span className="text-green-300 font-semibold text-xs sm:text-sm">Codeforces • Candidate Master (1964)</span>
+          </div>
+          <div className="px-3 py-1.5 sm:px-4 sm:py-2 bg-orange-500/10 border border-orange-500/20 rounded-lg backdrop-blur-sm">
+            <span className="text-orange-300 font-semibold text-xs sm:text-sm">CodeChef • 6★ (peak 2219)</span>
           </div>
         </div>
 
@@ -64,8 +81,8 @@ export default function Hero() {
           <span className="cursor-blink">|</span>
         </div>
 
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed px-4 sm:px-6">
-          <span className="text-purple-300 font-semibold">Why hire me?</span> I architect scalable solutions backed by competitive programming excellence and real-world backend expertise. <span className="text-yellow-300 font-bold">AIR 19 in ICPC</span> and <span className="text-green-300 font-bold">3000+ problems solved</span> showcase my algorithmic prowess. In my fintech startup, I engineered <span className="text-blue-300 font-bold">microservices in Python</span> with <span className="text-cyan-300 font-bold">gRPC</span>, built high-performance REST APIs with <span className="text-pink-300 font-bold">FastAPI</span>, and optimized distributed backend systems. I transform complex problems into elegant, production-ready solutions.
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed px-4 sm:px-6">
+          Systems-first engineer with competitive-programming pedigree and production backend experience. Read the Achievements and Experience sections below for concrete metrics and architectural decisions.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full px-4">
